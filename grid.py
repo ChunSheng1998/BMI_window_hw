@@ -142,15 +142,15 @@ class Window(tk.Tk):
 
         except ValueError as e:
                 if "height" in str(e):
-                        ERRORmessage = "豬頭! 身高有負的嗎?!"
+                        ERRORmessage = "身高有負的嗎?!"
                 elif "weight" in str(e):
-                        ERRORmessage = "豬頭! 體重負的? 你住月球阿!?"
+                        ERRORmessage = "體重負的? 你住月球阿!?"
                 elif "date1" in str(e):
-                        ERRORmessage = "請問您是祖先嗎?"
+                        ERRORmessage = "您是祖先嗎?"
                 elif "date2" in str(e):
-                        ERRORmessage = "請問您是尚未出生嗎?"
+                        ERRORmessage = "您是尚未出生嗎?"
                 else:
-                        ERRORmessage = "豬頭! 身高or體重or日期的格式有誤!!"
+                        ERRORmessage = "身高or體重or日期的格式有誤!!"
                 self.messageText.configure(state=tk.NORMAL)
                 self.messageText.delete('1.0', tk.END)
                 self.messageText.tag_configure("center", justify='center')
@@ -161,17 +161,17 @@ class Window(tk.Tk):
         bmi = weight / ((height/100) ** 2)
 
         if bmi < 18.5:
-             bmi_msg= "你太輕囉! 多吃一點!!"
+             bmi_msg= "體重過輕"
         elif bmi <24:
-             bmi_msg= "恭喜你~~BMI完美!!"
+             bmi_msg= "健康體重"
         elif bmi <27:
-             bmi_msg= "哇~最近是不是有點放縱了!!"
+             bmi_msg= "體重過重"
         elif bmi <30:
-             bmi_msg= "嗯~~該忌口囉!!"
+             bmi_msg= "輕度肥胖"
         elif bmi <35:
-             bmi_msg= "少吃點~~而且該上健身房囉!!"
+             bmi_msg= "中度肥胖"
         else:
-             bmi_msg= "健康亮紅燈囉!放下手上那塊雞排!!"
+             bmi_msg= "重度肥胖"
              
         self.messageText.configure(state=tk.NORMAL)
         self.messageText.delete('1.0',tk.END)
